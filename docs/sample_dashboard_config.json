@@ -1,0 +1,124 @@
+{
+  "format": "capital-dashboard",
+  "version": 1,
+  "layout": "Sample: Volume Leaders",
+  "components": [
+    {
+      "position": 0,
+      "kind": "kpi",
+      "title": "Sessions Loaded",
+      "metric": "total_records",
+      "dimension": null,
+      "aggregation": "count",
+      "source": "overview",
+      "options": {
+        "format": "#,##0"
+      },
+      "filters": null,
+      "visible": true
+    },
+    {
+      "position": 1,
+      "kind": "kpi",
+      "title": "Average Delivery %",
+      "metric": "avg_delivery",
+      "dimension": null,
+      "aggregation": "avg",
+      "source": "overview",
+      "options": {
+        "format": "0.00",
+        "thresholds": {
+          "good": 45,
+          "warning": 30
+        }
+      },
+      "filters": null,
+      "visible": true
+    },
+    {
+      "position": 2,
+      "kind": "kpi",
+      "title": "Session Volume",
+      "metric": "total_volume",
+      "dimension": null,
+      "aggregation": "sum",
+      "source": "prices",
+      "options": {
+        "format": "#,##0"
+      },
+      "filters": null,
+      "visible": true
+    },
+    {
+      "position": 3,
+      "kind": "line",
+      "title": "Delivery % Trend",
+      "metric": "delivery_pct",
+      "dimension": "trade_date",
+      "aggregation": "avg",
+      "source": "prices",
+      "options": {
+        "filters_control": true
+      },
+      "filters": null,
+      "visible": true
+    },
+    {
+      "position": 4,
+      "kind": "bar",
+      "title": "Volume by Symbol (top 15)",
+      "metric": "tottrdqty",
+      "dimension": "symbol",
+      "aggregation": "sum",
+      "source": "prices",
+      "options": {
+        "limit": 15,
+        "order": "desc"
+      },
+      "filters": null,
+      "visible": true
+    },
+    {
+      "position": 5,
+      "kind": "pie",
+      "title": "Volume Classification",
+      "metric": "d_ind",
+      "dimension": "d_ind",
+      "aggregation": "count",
+      "source": "screener",
+      "options": null,
+      "filters": null,
+      "visible": true
+    },
+    {
+      "position": 6,
+      "kind": "table",
+      "title": "Delivery Leaders",
+      "metric": "today_delivery",
+      "dimension": "symbol",
+      "aggregation": "max",
+      "source": "screener",
+      "options": {
+        "limit": 10,
+        "order": "desc"
+      },
+      "filters": null,
+      "visible": true
+    },
+    {
+      "position": 7,
+      "kind": "table",
+      "title": "Top Gainers",
+      "metric": "pct_change",
+      "dimension": "symbol",
+      "aggregation": "max",
+      "source": "derived",
+      "options": {
+        "limit": 10,
+        "filters_control": true
+      },
+      "filters": null,
+      "visible": true
+    }
+  ]
+}

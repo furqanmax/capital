@@ -1,0 +1,88 @@
+# ---------------------------------------------------------------
+# Capital Analytics — .gitignore
+# ---------------------------------------------------------------
+
+# --- Python ----------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg-link
+.eggs/
+pip-wheel-metadata/
+
+# --- Virtual environments / secrets ---------------------------
+.venv/
+venv/
+env/
+ENV/
+.env
+.env.*
+!.env.example
+
+# --- PyInstaller ----------------------------------------------
+build/
+dist/
+/CapitalAnalytics.spec        # spec auto-written by CLI builds
+*.manifest
+*.toc
+# keep the real recipes tracked:
+!capital.spec
+!capital-onefile.spec
+
+# --- Wine / Windows build host ---------------------------------
+.wine*/
+*.wine
+*.msi
+*.log.bak
+
+# --- Runtime data (database lives next to the app) -------------
+data/capital.db
+data/capital.db-shm
+data/capital.db-wal
+data/capital.db-journal
+data/backups/
+data/exports/
+data/web_assets/              # plotly.min.js is regenerated at startup
+# the bundled sample workbook stays tracked:
+!data/Saif-Stock Market Data File-Sample.xlsm
+
+# --- Logs ------------------------------------------------------
+logs/*
+!logs/.gitkeep
+
+# --- Tests / coverage / caches ---------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+.cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+.hypothesis/
+
+# --- Notebooks -------------------------------------------------
+.ipynb_checkpoints/
+
+# --- Editors / OS ---------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+
+# --- Misc temp -------------------------------------------------
+*.tmp
+*.bak
+*.orig
+*.rej

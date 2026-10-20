@@ -1,0 +1,65 @@
+{
+  "database": {
+    "path": "data/capital.db",
+    "backup_dir": "data/backups"
+  },
+  "import": {
+    "duplicate_policy": "skip",
+    "sheet_priority": [
+      "Data",
+      "data",
+      "Sheet1"
+    ],
+    "auto_map_columns": true,
+    "store_extra_columns": true,
+    "require_columns": [
+      "Symbol",
+      "Date"
+    ],
+    "max_error_samples": 25
+  },
+  "display": {
+    "theme": "dark",
+    "date_format": "%Y-%m-%d",
+    "number_format": "#,##0.00",
+    "percent_format": "0.00",
+    "grid_lines": true,
+    "chart_engine": "plotly"
+  },
+  "colors": {
+    "scheme": "workbook",
+    "text_mode": "auto",
+    "show_legend": true,
+    "overrides": {}
+  },
+  "filters": {
+    "default_date_range_days": 30,
+    "default_symbols": [],
+    "page_size": 100
+  },
+  "analytics": {
+    "duckdb": true,
+    "duckdb_path": "",
+    "large_dataset_rows": 200000
+  },
+  "formulas": {
+    "mode": "original",
+    "moving_average_days": 25,
+    "delivery_baseline_days": 25
+  },
+  "dashboard": {
+    "default_landing_page": "dashboard",
+    "active_layout": "Default",
+    "refresh_on_import": true
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/capital.log",
+    "max_bytes": 2097152,
+    "backup_count": 3
+  },
+  "export": {
+    "directory": "data/exports",
+    "default_format": "xlsx"
+  }
+}

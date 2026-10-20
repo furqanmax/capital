@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "name": "Saif workbook",
+  "source": "Saif-Stock Market Data File-Sample.xlsm",
+  "notes": [
+    "Main!A1 = #FFFF00 date label, Main!B1 = #9DC3E6 date value.",
+    "Main!N18:N29 is the legend; the screener fills come from conditional-formatting dxfs 151-174.",
+    "Analysis!A14:X14 uses #FFD966 for the price columns and #767171 for the derived columns.",
+    "Analysis!N/R/W use #C6EFCE/#006100 (above) and #FFC7CE/#9C0006 (below).",
+    "SILVER is #AFABAB on Main but #A6A6A6 on Analysis; the Main dashboard value wins here.",
+    "The legend's Low Del swatch is #FEE2E3 while the rule paints #FDD7D5; the rule wins here.",
+    "V1 (J/Spl/Trpl/Dbl/--/^) is uncoloured in the workbook, so the entries are null."
+  ],
+  "groups": {
+    "d_ind": {
+      "V.High": {"fill": "#7030A0"},
+      "High": {"fill": "#00B050"},
+      "Above": {"fill": "#FFC000"},
+      "Low": {"fill": "#FF0000"}
+    },
+    "dv1": {
+      "BRONZE": {"fill": "#BF9000"},
+      "SILVER": {"fill": "#AFABAB"},
+      "GOLD": {"fill": "#FFC000"}
+    },
+    "dv2": {
+      "Low Del": {"fill": "#FDD7D5", "text": "#C00000"},
+      "40% Plus": {"fill": "#00B0F0"},
+      "50% Plus": {"fill": "#92D050"},
+      "60% Plus": {"fill": "#00B050"},
+      "80% Plus": {"fill": "#7030A0"}
+    },
+    "range": {
+      "Above": {"fill": "#C6EFCE", "text": "#006100"},
+      "Below": {"fill": "#FFC7CE", "text": "#9C0006"}
+    },
+    "v1": {
+      "J": null,
+      "Spl": null,
+      "Trpl": null,
+      "Dbl": null,
+      "--": null,
+      "^": null
+    }
+  },
+  "chrome": {
+    "surface": "#FFFFFF",
+    "table_header": "#FFD966",
+    "table_header_text": "#101828",
+    "section": "#767171",
+    "accent": "#4472C4",
+    "highlight": "#FFDE75",
+    "date_label": "#FFFF00",
+    "date_value": "#9DC3E6"
+  },
+  "series": [
+    "#4472C4",
+    "#FFC000",
+    "#00B050",
+    "#7030A0",
+    "#00B0F0",
+    "#BF9000",
+    "#92D050",
+    "#AFABAB",
+    "#FF0000",
+    "#767171"
+  ]
+}

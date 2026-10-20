@@ -1,0 +1,37 @@
+# Capital — Configurable Stock Market Analytics Desktop Application
+# Target runtime: Python 3.10+ (developed and verified on 3.10.12)
+# All dependencies are open-source and run fully offline (no cloud account,
+# no web server, no paid subscription).
+
+PySide6>=6.6
+SQLAlchemy>=2.0,<2.1
+pandas>=2.0,<2.4
+openpyxl>=3.1,<3.2
+plotly>=5.18
+numpy>=1.24
+XlsxWriter>=3.1
+reportlab>=3.6
+olefile>=0.46
+
+# VBA inspection (read-only): the preferred macro extractor.  The application
+# falls back to a built-in MS-OVBA decompressor if oletools is unavailable.
+oletools>=0.60
+
+# --- optional accelerators (both are safe to omit) ---------------------------
+# python-calamine: a Rust workbook reader.  openpyxl stays the fallback, but the
+# Rust reader parses a 100 000-row sheet in about 0.02 s instead of 6 s because
+# it does not build a Python object per cell.  Under 1 MB.
+# python-calamine>=0.2
+#
+# duckdb: an embedded columnar engine holding a *derived* mirror of the price
+# table.  It turns the dashboard aggregates into sub-second queries once the
+# table no longer fits comfortably in pandas/SQLite (millions of rows).  SQLite
+# remains the system of record; without this package every page still works and
+# simply uses SQLite.  About 21 MB.
+# duckdb>=1.0
+#
+# Install them with:  pip install python-calamine duckdb
+
+# --- development / packaging only ---
+pytest>=7.4
+pyinstaller>=6.0
